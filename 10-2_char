@@ -1,0 +1,24 @@
+#include "stdafx.h"								//visual stdio 2013...
+#include <cstdio>
+
+
+int main()
+{
+	char t[1000] = {};
+	printf("문자열을 입력하세요: ");
+	scanf("%s", t);
+
+	int i=0, k = 1;
+
+	while (t[i++] != '\0'){
+		if (t[i] >= 'a' && t[i] <= 'z')
+			t[i] = t[i] - 32;
+		else if (t[i] >= 'A' && t[i] <= 'Z')
+			t[i] = t[i] + 32;
+	}
+	printf("바뀐 문자열: %s\n", t);
+
+	getchar();getchar();									//visual stdio 2013...
+
+	return 0;
+}
