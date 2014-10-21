@@ -1,6 +1,6 @@
-#include "stdafx.h"								//visual stdio 2013...
+#include "stdafx.h"								//visual stduio 2013...
 #include <cstdio>
-
+#pragma warning(disable: 4996)							//visual studio 2013...scanf...
 
 int main()
 {
@@ -18,7 +18,7 @@ int main()
 	}
 	printf("바뀐 문자열: %s\n", t);
 
-	getchar();getchar();									//visual stdio 2013...
+	getchar();getchar();							//visual stdio 2013...
 
 	return 0;
 }
