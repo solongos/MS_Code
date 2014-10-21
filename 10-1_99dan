@@ -1,6 +1,5 @@
-#include "stdafx.h"								//visual stdio 2013...
-#include <cstdio>
-
+#include "stdafx.h"				//visual stduio 2013...
+#pragma warning(disable:4996)			//visual studio 2013....
 
 int main()
 {
@@ -9,7 +8,7 @@ int main()
 	while (1) {
 		printf("출력할 단을 입력해주세요: ");
 		scanf("%d", &num);
-		getchar();								//visual stdio 2013...
+		getchar();								//visual stduio 2013...
 
 		if (num < 1 || num>9){
 			printf("1~9 사이의 숫자로 다시 입력해주세요-----------\n");
@@ -24,6 +23,6 @@ int main()
 		printf("\n");
 	}
 
-	getchar();									//visual stdio 2013...
+	getchar();									//visual stduio 2013...
 	return 0;
 }
