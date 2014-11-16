@@ -1,0 +1,30 @@
+#include<iostream>
+#include<cstdio>
+//typedef long long LL;
+using namespace std;
+
+long long gcd(long long a, long long b) {
+    return (b==0) ? a : gcd(b, a % b);
+}
+
+void cal(long long l, long long r) {
+    long long a, b, c;
+    for (a = l; a <= r; a++) {
+        for (b = a + 1; b <= r; b++) {
+            for (c = b + 1; c <= r; c++) {
+                if (gcd(a, b) == 1 && gcd(b, c) == 1 && gcd(a, c) != 1) {
+                    cout << a << " " << b << " " << c << endl;
+                    return;
+                }
+            }
+        }
+    }
+    cout << -1 << endl;
+}
+int main() {
+    long long l, r;
+    while (cin >> l >> r) {
+        cal(l, r);
+    }
+    return 0;
+}
