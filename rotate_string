@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+   char str[101], temp[101];
+   int i, j, k;
+   
+   scanf("%d", &i);
+   scanf("%s", str);
+   
+   k = strlen(str);
+   
+   for(j=0; j<k; j++)
+    temp[j] = str[(j+i) % k];
+    
+    printf("%s\n", temp);
+   return 0;
+}
