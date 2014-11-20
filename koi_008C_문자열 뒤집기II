@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void swap_s(char st[]) {
+	int i, j, k=0;
+	i = strlen(st);
+	
+	char temp;
+	int s = 0;
+	int e = i - 1;
+	int t = i/2;
+	
+    while(t){
+    	temp = st[s];
+    	st[s] = st[e];
+    	st[e] = temp;
+    	s++; e--; t--;
+	}
+	
+	for(k=0; k<i; k++) {
+		if(islower(st[k])) {
+			st[k] = toupper(st[k]);
+		}	
+	}
+	
+	printf("%s", st);
+}
+
+int main()
+{
+	char stri[51];
+	char t_s[51]="";
+	scanf("%[^\n]s", stri);
+	
+	int l = strlen(stri);		//  이 부분 
+	stri[l] = ' ';				//  삭제하면 
+	stri[l+1] = '\0';			//  글자로 끝나는 경우 해결 안됨....why?.... 
+	
+	
+	int i=0, j=0, k=0;
+	while(stri[i++] != '\0') 
+	{
+		if(isalpha(stri[i-1]) > 0) {
+			t_s[j] = stri[i-1];
+			j++;
+		}
+		else {
+			swap_s(t_s);
+			printf("%c", stri[i-1]);
+			j = 0;
+			for(k=0; k<51; k++) {
+				t_s[k] = '\0';
+			}
+		}
+	}
+	return 0;
+}
