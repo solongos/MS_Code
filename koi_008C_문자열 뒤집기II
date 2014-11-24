@@ -33,7 +33,7 @@ int main()
 	char t_s[51]="";
 	scanf("%[^\n]s", stri);
 	
-	int l = strlen(stri);		//  이 부분 
+	int l = strlen(stri);			//  이 부분 
 	stri[l] = ' ';				//  삭제하면 
 	stri[l+1] = '\0';			//  글자로 끝나는 경우 해결 안됨....why?.... 
 	
