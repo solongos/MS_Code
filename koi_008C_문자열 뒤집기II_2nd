@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+char str[100];
+
+void rev(int a, int b)
+{
+    int i;
+	for(i=b; i>=a; i--)
+    {
+        if(str[i]>='a' && str[i]<='z')    			//소문자이면
+            printf("%c", 'A'+str[i]-'a'); 			//대문자로 출력
+        else                                    //소문자가 아니면
+            printf("%c", str[i]);           		//그대로 출력.. 수나 다른 기호의 경우도 처리를…..
+    }
+}
+
+int main()
+{
+    //fgets(str, 100, stdin);            			//공백까지 포함해서 배열로 입력받고
+ 
+ 	scanf("%[^\n]s", str);
+ 	
+    int i=0, p=0;
+    
+    while(1)
+    {
+        if(str[i]==' ' || str[i]=='.' || str[i]=='!' || str[i]=='\0')
+        {
+            rev(p, i-1);
+            if(str[i]=='\0') break;       //문장끝 나타내는 널문자이면 종료.
+            printf("%c", str[i]);
+            p=i+1;                        //새로운 문장 시작 위치.
+        }
+        i++;
+    }
+    
+    return 0;
+}
