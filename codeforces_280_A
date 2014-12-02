@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+    int n, i=1, c=0;
+    scanf("%d", &n);
+    while(n > 0){
+        n = n - i*(i+1)/2;
+        c++;
+        i++;
+    }
+    printf("%d", (n==0) ? c : c-1);
+    return 0;
+}
